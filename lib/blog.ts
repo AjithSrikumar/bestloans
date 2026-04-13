@@ -83,3 +83,25 @@ export function getAllSlugs(): string[] {
     .filter((f) => f.endsWith(".mdx") || f.endsWith(".md"))
     .map((f) => f.replace(/\.mdx?$/, ""));
 }
+
+/**
+ * Returns posts related to the given slug by shared tags.
+ * Falls back to recency-sorted posts if no tag overlap found.
+ */
+export function getRelatedPosts(slug: string, limit = 3): BlogMeta[] {
+  const all = getAllPosts();
+  const current = all.find((p) => p.slug === slug);
+  if (!current) return all.filter((p) => p.slug !== slug).slice(0, limit);
+
+  const currentTags = new Set(current.tags.map((t) => t.toLowerCase()));
+
+  const scored = all
+    .filter((p) => p.slug !== slug)
+    .map((p) => ({
+      post: p,
+      score: p.tags.filter((t) => currentTags.has(t.toLowerCase())).length,
+    }))
+    .sort((a, b) => b.score - a.score || new Date(b.post.date).getTime() - new Date(a.post.date).getTime());
+
+  return scored.slice(0, limit).map((s) => s.post);
+}
