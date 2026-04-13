@@ -1,0 +1,31 @@
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import BankLogosSection from "@/components/BankLogosSection";
+import BenefitsSection from "@/components/BenefitsSection";
+import ProcessSection from "@/components/ProcessSection";
+import SocialProof from "@/components/SocialProof";
+import FAQSection from "@/components/FAQSection";
+import CTASection from "@/components/CTASection";
+import Footer from "@/components/Footer";
+import StickyMobileBar from "@/components/StickyMobileBar";
+import StickySideForm from "@/components/StickySideForm";
+
+export default function Home() {
+  return (
+    <>
+      <Navbar />
+      <main className="flex-1">
+        <HeroSection />
+        <BankLogosSection />
+        <BenefitsSection />
+        <ProcessSection />
+        <SocialProof />
+        <FAQSection />
+        <CTASection />
+      </main>
+      <Footer />
+      <StickyMobileBar />
+      <StickySideForm />
+    </>
+  );
+}
