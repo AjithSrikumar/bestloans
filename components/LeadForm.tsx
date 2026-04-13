@@ -135,7 +135,7 @@ export default function LeadForm({ compact = false }: Props) {
   function openWhatsApp() {
     const msg = generateWhatsAppMessage(form);
     const encoded = encodeURIComponent(msg);
-    window.open(`https://wa.me/919999999999?text=${encoded}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/919940690527?text=${encoded}`, "_blank", "noopener,noreferrer");
   }
 
   // Success state
