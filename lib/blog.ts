@@ -12,6 +12,7 @@ export interface BlogPost {
   date: string;
   tags: string[];
   readingTime: string;
+  coverImage?: string;
   content: string;
 }
 
@@ -72,6 +73,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
     date: data.date ?? new Date().toISOString(),
     tags: data.tags ?? [],
     readingTime: rt.text,
+    coverImage: data.coverImage ?? null,
     content,
   };
 }

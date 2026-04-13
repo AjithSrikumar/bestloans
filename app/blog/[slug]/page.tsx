@@ -1,10 +1,12 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import { getPostBySlug, getAllSlugs, getRelatedPosts } from "@/lib/blog";
 import BlogLayout from "@/components/BlogLayout";
 import RelatedPosts from "@/components/RelatedPosts";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import { mdxComponents } from "@/components/mdx-components";
 
 interface Params {
   params: Promise<{ slug: string }>;
@@ -52,8 +54,13 @@ export default async function BlogPostPage({ params }: Params) {
         date={post.date}
         tags={post.tags}
         readingTime={post.readingTime}
+        coverImage={(post as any).coverImage}
       >
-        <MDXRemote source={post.content} />
+        <MDXRemote
+          source={post.content}
+          options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+          components={mdxComponents}
+        />
         <RelatedPosts posts={relatedPosts} currentSlug={slug} />
       </BlogLayout>
       <FloatingWhatsApp />
