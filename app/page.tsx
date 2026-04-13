@@ -9,6 +9,8 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import StickyMobileBar from "@/components/StickyMobileBar";
 import StickySideForm from "@/components/StickySideForm";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import ExitIntentModal from "@/components/ExitIntentModal";
 
 export default function Home() {
   return (
@@ -26,6 +28,8 @@ export default function Home() {
       <Footer />
       <StickyMobileBar />
       <StickySideForm />
+      <FloatingWhatsApp />
+      <ExitIntentModal />
     </>
   );
 }

@@ -1,4 +1,4 @@
-import LeadForm from "./LeadForm";
+import MultiStepForm from "./MultiStepForm";
 import { Shield, Clock, Star, TrendingDown } from "lucide-react";
 
 const trustBadges = [
@@ -99,7 +99,7 @@ export default function HeroSection() {
 
           {/* Right – Lead Form */}
           <div className="animate-fade-in-up delay-200 lg:ml-8">
-            <LeadForm />
+            <MultiStepForm />
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import LeadForm from "./LeadForm";
+import MultiStepForm from "./MultiStepForm";
 import { X } from "lucide-react";
 
 export default function StickySideForm() {
@@ -33,7 +33,7 @@ export default function StickySideForm() {
           <X size={18} />
         </button>
       </div>
-      <LeadForm compact />
+      <MultiStepForm compact />
     </div>
   );
 }

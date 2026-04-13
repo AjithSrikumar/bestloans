@@ -1,4 +1,4 @@
-import LeadForm from "./LeadForm";
+import MultiStepForm from "./MultiStepForm";
 import { CheckCircle2 } from "lucide-react";
 
 const perks = [
@@ -51,7 +51,7 @@ export default function CTASection() {
 
           {/* Right – Form */}
           <div>
-            <LeadForm />
+            <MultiStepForm />
           </div>
         </div>
       </div>

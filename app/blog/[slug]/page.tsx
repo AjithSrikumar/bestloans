@@ -1,8 +1,10 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { getPostBySlug, getAllSlugs } from "@/lib/blog";
+import { getPostBySlug, getAllSlugs, getRelatedPosts } from "@/lib/blog";
 import BlogLayout from "@/components/BlogLayout";
+import RelatedPosts from "@/components/RelatedPosts";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 interface Params {
   params: Promise<{ slug: string }>;
@@ -40,15 +42,21 @@ export default async function BlogPostPage({ params }: Params) {
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
+  const relatedPosts = getRelatedPosts(slug, 3);
+
   return (
-    <BlogLayout
-      title={post.title}
-      description={post.description}
-      date={post.date}
-      tags={post.tags}
-      readingTime={post.readingTime}
-    >
-      <MDXRemote source={post.content} />
-    </BlogLayout>
+    <>
+      <BlogLayout
+        title={post.title}
+        description={post.description}
+        date={post.date}
+        tags={post.tags}
+        readingTime={post.readingTime}
+      >
+        <MDXRemote source={post.content} />
+        <RelatedPosts posts={relatedPosts} currentSlug={slug} />
+      </BlogLayout>
+      <FloatingWhatsApp />
+    </>
   );
 }
