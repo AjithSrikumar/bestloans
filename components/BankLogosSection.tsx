@@ -3,10 +3,21 @@
 import { useState } from "react";
 
 const banks = [
+  { name: "LIC Housing Finance",    domain: "lichousing.com" },
   { name: "Aadhar Housing Finance", domain: "aadharhousing.com" },
-  { name: "Agrim Housing Finance",  domain: "agrimhfc.com" },
   { name: "Bajaj Housing Finance",  domain: "bajajhousingfinance.in" },
-  { name: "Bank of India",          domain: "bankofindia.bank.in" },
+  { name: "Aavas Financiers",       domain: "aavas.in" },
+  { name: "Kotak Bank",             domain: "kotak.bank.in" },
+  { name: "ICICI Bank",             domain: "icici.bank.in" },
+  { name: "Jio Credit",             domain: "jiocredit.in" },
+  { name: "Vastu HFC",              domain: "vastuhfc.com" },
+  { name: "Sammaan Capital",        domain: "sammaancapital.com" },
+  { name: "PNB Housing Finance",    domain: "pnbhousing.com" },
+  { name: "Satin Housing Finance",  domain: "satinhousingfinance.com" },
+  { name: "SBI",                    domain: "sbi.bank.in" },
+  { name: "Equitas Bank",           domain: "equitas.bank.in" },
+  { name: "Indian Bank",            domain: "indianbank.bank.in" },
+  { name: "GIC Housing Finance",    domain: "gichfindia.com" },
   { name: "Bank of Baroda",         domain: "bankofbaroda.bank.in" },
 ];
 
@@ -14,9 +25,9 @@ function BankLogo({ name, domain }: { name: string; domain: string }) {
   const [failed, setFailed] = useState(false);
 
   return (
-    <div className="flex items-center justify-center w-[140px] h-[52px]">
+    <div className="flex items-center justify-center w-[130px] h-[48px]">
       {failed ? (
-        <span className="text-[11px] font-semibold text-gray-500 text-center leading-tight px-2">
+        <span className="text-[10px] font-semibold text-gray-500 text-center leading-tight px-1">
           {name}
         </span>
       ) : (
@@ -25,7 +36,7 @@ function BankLogo({ name, domain }: { name: string; domain: string }) {
           src={`https://logos.hunter.io/${domain}`}
           alt={name}
           title={name}
-          className="max-h-[36px] max-w-[120px] w-auto h-auto object-contain"
+          className="max-h-[34px] max-w-[110px] w-auto h-auto object-contain"
           onError={() => setFailed(true)}
         />
       )}
@@ -36,7 +47,7 @@ function BankLogo({ name, domain }: { name: string; domain: string }) {
 export default function BankLogosSection() {
   return (
     <section id="banks" className="py-12 sm:py-16 bg-white border-y border-gray-100">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-8 sm:mb-10">
           <p className="text-[#22C55E] font-semibold text-sm uppercase tracking-wider mb-2">
@@ -50,7 +61,7 @@ export default function BankLogosSection() {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12">
+        <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-5 sm:gap-x-8 sm:gap-y-7">
           {banks.map((bank) => (
             <BankLogo key={bank.name} name={bank.name} domain={bank.domain} />
           ))}
