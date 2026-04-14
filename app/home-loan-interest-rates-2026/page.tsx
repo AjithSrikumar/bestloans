@@ -153,7 +153,7 @@ export default function RatesPage() {
                 <ul className="space-y-2 text-sm text-blue-100">
                   {[
                     "Zero impact on CIBIL score",
-                    "Compare 50+ banks simultaneously",
+                    "Compare 150+ banks simultaneously",
                     "Expert negotiation on your behalf",
                     "Result in 48 hours",
                   ].map((b) => (

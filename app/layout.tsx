@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | BestLoans",
   },
   description:
-    "Compare home loans from 50+ banks. Fast approval, lowest interest rates. Apply online in minutes with BestLoans.",
+    "Compare home loans from 150+ banks. Fast approval, lowest interest rates. Apply online in minutes with BestLoans.",
   keywords: [
     "home loan",
     "best home loan",
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
     siteName: "BestLoans",
     title: "BestLoans – Get the Best Home Loan in India",
     description:
-      "Compare home loans from 50+ banks. Fast approval, lowest interest rates.",
+      "Compare home loans from 150+ banks. Fast approval, lowest interest rates.",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "BestLoans – Get the Best Home Loan in India",
     description:
-      "Compare home loans from 50+ banks. Fast approval, lowest interest rates.",
+      "Compare home loans from 150+ banks. Fast approval, lowest interest rates.",
   },
   robots: {
     index: true,

@@ -70,7 +70,7 @@ export default function SalariedLoanPage() {
                 <p className="text-gray-600 text-lg">
                   As a salaried employee, you get preferential rates from all major
                   banks. BestLoans finds you the best deal from{" "}
-                  <strong>50+ banks</strong> — instantly, free.
+                  <strong>150+ banks</strong> — instantly, free.
                 </p>
 
                 <div className="grid grid-cols-2 gap-3">

@@ -10,7 +10,7 @@ const trustBadges = [
 
 const stats = [
   { value: "10,000+", label: "Happy Customers" },
-  { value: "50+", label: "Partner Banks" },
+  { value: "150+", label: "Partner Banks" },
   { value: "₹200 Cr+", label: "Loans Disbursed" },
 ];
 
@@ -64,7 +64,7 @@ export default function HeroSection() {
 
             <p className="text-gray-600 text-lg leading-relaxed max-w-lg">
               Get a Dedicated Expert Manager who compares{" "}
-              <strong className="text-[#1E3A8A]">50+ Banks &amp; NBFCs</strong>{" "}
+              <strong className="text-[#1E3A8A]">150+ Banks &amp; NBFCs</strong>{" "}
               for you — saving hours of research and paperwork.
             </p>
 

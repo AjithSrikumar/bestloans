@@ -108,7 +108,7 @@ export default function SocialProof() {
           {[
             { value: "10,000+", label: "Loans Processed" },
             { value: "₹200 Cr+", label: "Total Loan Volume" },
-            { value: "50+", label: "Partner Banks" },
+            { value: "150+", label: "Partner Banks" },
             { value: "4.8★", label: "Average Rating" },
           ].map(({ value, label }) => (
             <div key={label}>

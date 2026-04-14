@@ -1,21 +1,47 @@
+"use client";
+
+import { useState } from "react";
+
 const banks = [
-  { name: "SBI", color: "#1a56db" },
-  { name: "HDFC", color: "#c0392b" },
-  { name: "ICICI", color: "#e67e22" },
-  { name: "Axis", color: "#8e44ad" },
-  { name: "Kotak", color: "#e74c3c" },
-  { name: "PNB", color: "#2563EB" },
-  { name: "Bank of Baroda", color: "#f97316" },
-  { name: "Canara", color: "#047857" },
-  { name: "LIC HFL", color: "#1E3A8A" },
-  { name: "LICHFL", color: "#1E3A8A" },
-  { name: "Bajaj", color: "#3b82f6" },
-  { name: "Tata Capital", color: "#0f172a" },
-  { name: "Aavas", color: "#7c3aed" },
-  { name: "Indiabulls", color: "#d97706" },
-  { name: "IDFC First", color: "#0284c7" },
-  { name: "Bank of India", color: "#1d4ed8" },
+  { name: "SBI",             domain: "sbi.co.in" },
+  { name: "HDFC Bank",       domain: "hdfcbank.com" },
+  { name: "ICICI Bank",      domain: "icicibank.com" },
+  { name: "Axis Bank",       domain: "axisbank.com" },
+  { name: "Kotak",           domain: "kotak.com" },
+  { name: "PNB",             domain: "pnbindia.in" },
+  { name: "Bank of Baroda",  domain: "bankofbaroda.in" },
+  { name: "Canara Bank",     domain: "canarabank.in" },
+  { name: "LIC HFL",         domain: "lichousing.com" },
+  { name: "Bajaj Finance",   domain: "bajajfinserv.in" },
+  { name: "Tata Capital",    domain: "tatacapital.com" },
+  { name: "Aavas",           domain: "aavas.in" },
+  { name: "Indiabulls",      domain: "indiabullshomeloans.com" },
+  { name: "IDFC First",      domain: "idfcfirstbank.com" },
+  { name: "Bank of India",   domain: "bankofindia.co.in" },
+  { name: "Union Bank",      domain: "unionbankofindia.co.in" },
 ];
+
+function BankCard({ name, domain }: { name: string; domain: string }) {
+  const [failed, setFailed] = useState(false);
+
+  return (
+    <div className="flex items-center justify-center bg-gray-50 hover:bg-white border border-gray-100 hover:border-gray-200 rounded-xl p-3 h-16 transition-all hover:shadow-sm">
+      {failed ? (
+        <span className="font-bold text-[11px] text-center leading-tight text-gray-500">
+          {name}
+        </span>
+      ) : (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={`https://logo.clearbit.com/${domain}`}
+          alt={name}
+          className="max-h-8 max-w-full object-contain"
+          onError={() => setFailed(true)}
+        />
+      )}
+    </div>
+  );
+}
 
 export default function BankLogosSection() {
   return (
@@ -26,7 +52,7 @@ export default function BankLogosSection() {
             Our Partners
           </p>
           <h2 className="text-2xl md:text-3xl font-extrabold text-[#1E3A8A]">
-            Compare Loans from 50+ Banks
+            Compare Loans from 150+ Banks
           </h2>
           <p className="text-gray-400 text-sm mt-2">
             We partner with all major banks and NBFCs in India
@@ -35,17 +61,7 @@ export default function BankLogosSection() {
 
         <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-4">
           {banks.map((bank) => (
-            <div
-              key={bank.name}
-              className="flex items-center justify-center bg-gray-50 hover:bg-gray-100 border border-gray-100 rounded-xl p-3 h-16 transition-all hover:shadow-sm group"
-            >
-              <div
-                className="font-bold text-[11px] text-center leading-tight"
-                style={{ color: bank.color }}
-              >
-                {bank.name}
-              </div>
-            </div>
+            <BankCard key={bank.name} name={bank.name} domain={bank.domain} />
           ))}
         </div>
 

@@ -14,7 +14,7 @@ const steps = [
     icon: GitCompareArrows,
     title: "Compare & Choose",
     description:
-      "Our algorithm fetches live rates from 50+ banks. Your loan expert calls you with the best options.",
+      "Our algorithm fetches live rates from 150+ banks. Your loan expert calls you with the best options.",
     color: "bg-[#22C55E]",
   },
   {

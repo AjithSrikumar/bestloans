@@ -10,7 +10,7 @@ import {
 const benefits = [
   {
     icon: GitCompareArrows,
-    title: "Compare 50+ Banks",
+    title: "Compare 150+ Banks",
     description:
       "See side-by-side comparison of interest rates, EMIs, and fees from all major banks and NBFCs in India.",
     color: "bg-blue-50 text-[#1E3A8A]",

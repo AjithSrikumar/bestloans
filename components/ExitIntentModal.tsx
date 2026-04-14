@@ -84,7 +84,7 @@ export default function ExitIntentModal() {
         {/* Benefits */}
         <div className="bg-green-50 rounded-xl p-4 mb-5 space-y-2">
           {[
-            "Compare 50+ banks instantly",
+            "Compare 150+ banks instantly",
             "Rates starting from 7.10% p.a.",
             "Expert guidance, zero cost",
           ].map((b) => (

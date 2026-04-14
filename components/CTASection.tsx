@@ -4,7 +4,7 @@ import { CheckCircle2 } from "lucide-react";
 const perks = [
   "100% Free Service",
   "No Credit Score Impact",
-  "Compare 50+ Banks",
+  "Compare 150+ Banks",
   "Expert Guidance",
   "Fast Disbursement",
   "Zero Hidden Fees",
