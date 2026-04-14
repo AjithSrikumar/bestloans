@@ -7,7 +7,6 @@ const banks = [
   { name: "Aadhar Housing Finance", domain: "aadharhousing.com" },
   { name: "Bajaj Housing Finance",  domain: "bajajhousingfinance.in" },
   { name: "Aavas Financiers",       domain: "aavas.in" },
-  { name: "Kotak Bank",             domain: "kotakbank.com" },
   { name: "ICICI Bank",             domain: "icicibank.com" },
   { name: "Jio Credit",             domain: "jiocredit.in" },
   { name: "Vastu HFC",              domain: "vastuhfc.com" },
@@ -25,9 +24,14 @@ function BankLogo({ name, domain }: { name: string; domain: string }) {
   const [failed, setFailed] = useState(false);
 
   return (
-    <div className="flex items-center justify-center w-[130px] h-[48px]">
+    /*
+     * Every logo lives in an identical 128 × 48 px box.
+     * The image is rendered at exactly those dimensions with object-contain,
+     * so wide logos (SBI) and square icons (Jio) all occupy the same area.
+     */
+    <div className="w-32 h-12 flex items-center justify-center p-1.5">
       {failed ? (
-        <span className="text-[10px] font-semibold text-gray-500 text-center leading-tight px-1">
+        <span className="text-[10px] font-semibold text-gray-500 text-center leading-tight">
           {name}
         </span>
       ) : (
@@ -36,7 +40,7 @@ function BankLogo({ name, domain }: { name: string; domain: string }) {
           src={`https://logos.hunter.io/${domain}`}
           alt={name}
           title={name}
-          className="max-h-[34px] max-w-[110px] w-auto h-auto object-contain"
+          className="w-full h-full object-contain"
           onError={() => setFailed(true)}
         />
       )}
@@ -61,7 +65,8 @@ export default function BankLogosSection() {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-5 sm:gap-x-8 sm:gap-y-7">
+        {/* 5 per row on desktop, 3 on mobile — uniform cells */}
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-x-4 gap-y-6 justify-items-center">
           {banks.map((bank) => (
             <BankLogo key={bank.name} name={bank.name} domain={bank.domain} />
           ))}
