@@ -13,14 +13,14 @@ const banks = [
   { name: "Sammaan Capital",        domain: "sammaancapital.com" },
   { name: "PNB Housing Finance",    domain: "pnbhousing.com" },
   { name: "Satin Housing Finance",  domain: "satinhousingfinance.com" },
-  { name: "SBI",                    domain: "sbi.co.in" },
+  { name: "SBI",                    domain: "sbi.co.in", scale: "scale-[0.55]" },
   { name: "Equitas Bank",           domain: "equitasbank.com" },
   { name: "Indian Bank",            domain: "indianbank.in" },
   { name: "GIC Housing Finance",    domain: "gichfindia.com" },
   { name: "Bank of Baroda",         domain: "bankofbaroda.in" },
 ];
 
-function BankLogo({ name, domain }: { name: string; domain: string }) {
+function BankLogo({ name, domain, scale }: { name: string; domain: string; scale?: string }) {
   const [failed, setFailed] = useState(false);
 
   return (
@@ -40,7 +40,7 @@ function BankLogo({ name, domain }: { name: string; domain: string }) {
           src={`https://logos.hunter.io/${domain}`}
           alt={name}
           title={name}
-          className="w-full h-full object-contain"
+          className={`w-full h-full object-contain${scale ? ` ${scale}` : ""}`}
           onError={() => setFailed(true)}
         />
       )}
@@ -68,7 +68,7 @@ export default function BankLogosSection() {
         {/* 5 per row on desktop, 3 on mobile — uniform cells */}
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-x-4 gap-y-6 justify-items-center">
           {banks.map((bank) => (
-            <BankLogo key={bank.name} name={bank.name} domain={bank.domain} />
+            <BankLogo key={bank.name} name={bank.name} domain={bank.domain} scale={(bank as any).scale} />
           ))}
         </div>
 
