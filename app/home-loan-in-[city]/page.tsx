@@ -110,7 +110,7 @@ export default async function CityLoanPage({ params }: Params) {
                     <div className="text-xs text-gray-500">Avg Property Price</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-extrabold text-[#22C55E]">8.5%</div>
+                    <div className="text-2xl font-extrabold text-[#22C55E]">7.10%</div>
                     <div className="text-xs text-gray-500">Rates From (p.a.)</div>
                   </div>
                   <div>

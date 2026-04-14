@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="space-y-4">
             <BestLoansLogo size="sm" className="invert brightness-200" />
             <p className="text-gray-300 text-sm leading-relaxed">
-              India&apos;s trusted home loan comparison platform. Compare 25+
+              India&apos;s trusted home loan comparison platform. Compare 50+
               banks and get the best deal in minutes.
             </p>
             <div className="flex gap-3 mt-2">
@@ -90,8 +90,8 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-gray-300">
               <li className="flex items-start gap-2">
                 <Phone size={15} className="mt-0.5 shrink-0 text-[#22C55E]" />
-                <a href="tel:+919999999999" className="hover:text-white transition-colors">
-                  +91 99999 99999
+                <a href="tel:+919500109337" className="hover:text-white transition-colors">
+                  +91 95001 09337
                 </a>
               </li>
               <li className="flex items-start gap-2">
@@ -102,7 +102,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <MapPin size={15} className="mt-0.5 shrink-0 text-[#22C55E]" />
-                <span>Mumbai, Maharashtra, India – 400001</span>
+                <span>Chennai, Tamil Nadu, 600 006</span>
               </li>
             </ul>
           </div>

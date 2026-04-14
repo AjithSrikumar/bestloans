@@ -17,7 +17,7 @@ export default function StickyMobileBar() {
   return (
     <div className="fixed bottom-0 inset-x-0 z-50 md:hidden bg-white border-t border-gray-200 shadow-2xl px-4 py-3 flex gap-3">
       <a
-        href="tel:+919999999999"
+        href="tel:+919500109337"
         className="flex-1 flex items-center justify-center gap-2 border-2 border-[#1E3A8A] text-[#1E3A8A] font-semibold py-3 rounded-xl text-sm transition-colors hover:bg-blue-50"
       >
         <Phone size={16} />
