@@ -10,7 +10,7 @@ import {
 const benefits = [
   {
     icon: GitCompareArrows,
-    title: "Compare 25+ Banks",
+    title: "Compare 50+ Banks",
     description:
       "See side-by-side comparison of interest rates, EMIs, and fees from all major banks and NBFCs in India.",
     color: "bg-blue-50 text-[#1E3A8A]",
@@ -19,14 +19,14 @@ const benefits = [
     icon: TrendingDown,
     title: "Lowest Interest Rates",
     description:
-      "Get exclusive bank-beating rates starting from 8.5% p.a. Our volume ensures you always get the best deal.",
+      "Get exclusive bank-beating rates starting from 7.10% p.a. Our volume ensures you always get the best deal.",
     color: "bg-green-50 text-green-600",
   },
   {
     icon: Zap,
     title: "Fast Approval",
     description:
-      "Get in-principle approval within 30 minutes. Full loan sanction within 3-7 days — industry-fastest.",
+      "Get in-principle approval within 48 hours. Full loan sanction within 3-7 days — industry-fastest.",
     color: "bg-yellow-50 text-yellow-600",
   },
   {
@@ -64,7 +64,7 @@ export default function BenefitsSection() {
             The Smarter Way to Get a Home Loan
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto text-base">
-            We&apos;ve helped 50,000+ families get the home of their dreams.
+            We&apos;ve helped 10,000+ families get the home of their dreams.
             Here&apos;s what makes us different.
           </p>
         </div>

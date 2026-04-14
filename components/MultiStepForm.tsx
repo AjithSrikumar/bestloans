@@ -200,7 +200,7 @@ export default function MultiStepForm({ compact = false }: Props) {
     trackEvent("whatsapp_clicked", { source: "form_success" });
     const msg = buildWhatsAppMessage(form);
     window.open(
-      `https://wa.me/919999999999?text=${encodeURIComponent(msg)}`,
+      `https://wa.me/919500109337?text=${encodeURIComponent(msg)}`,
       "_blank",
       "noopener,noreferrer"
     );

@@ -10,7 +10,7 @@ export default function FloatingWhatsApp() {
   function handleClick() {
     trackEvent("whatsapp_clicked", { source: "floating_button" });
     window.open(
-      "https://wa.me/919999999999?text=" +
+      "https://wa.me/919500109337?text=" +
         encodeURIComponent(
           "Hi BestLoans team! 👋\n\nI'm interested in a home loan. Could you please help me find the best deal?"
         ),

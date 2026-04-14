@@ -153,9 +153,9 @@ export default function RatesPage() {
                 <ul className="space-y-2 text-sm text-blue-100">
                   {[
                     "Zero impact on CIBIL score",
-                    "Compare 25+ banks simultaneously",
+                    "Compare 50+ banks simultaneously",
                     "Expert negotiation on your behalf",
-                    "Result in 30 minutes",
+                    "Result in 48 hours",
                   ].map((b) => (
                     <li key={b} className="flex items-center gap-2">
                       <span className="text-[#22C55E]">✓</span> {b}

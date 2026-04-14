@@ -37,7 +37,7 @@ export default function ExitIntentModal() {
   function handleWhatsApp() {
     trackEvent("exit_intent_converted");
     window.open(
-      "https://wa.me/919999999999?text=" +
+      "https://wa.me/919500109337?text=" +
         encodeURIComponent(
           "Hi BestLoans team! 👋\n\nI was just browsing your site and would like to know more about home loan options. Could you send me the best rates available?"
         ),
@@ -84,8 +84,8 @@ export default function ExitIntentModal() {
         {/* Benefits */}
         <div className="bg-green-50 rounded-xl p-4 mb-5 space-y-2">
           {[
-            "Compare 25+ banks instantly",
-            "Rates starting from 8.5% p.a.",
+            "Compare 50+ banks instantly",
+            "Rates starting from 7.10% p.a.",
             "Expert guidance, zero cost",
           ].map((b) => (
             <p key={b} className="flex items-center gap-2 text-sm text-[#1E3A8A]">

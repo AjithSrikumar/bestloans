@@ -26,7 +26,7 @@ export default function BankLogosSection() {
             Our Partners
           </p>
           <h2 className="text-2xl md:text-3xl font-extrabold text-[#1E3A8A]">
-            Compare Loans from 25+ Banks
+            Compare Loans from 50+ Banks
           </h2>
           <p className="text-gray-400 text-sm mt-2">
             We partner with all major banks and NBFCs in India

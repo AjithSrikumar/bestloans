@@ -110,7 +110,7 @@ export default function BlogLayout({
               Ready to Get Your Home Loan?
             </h3>
             <p className="text-blue-200 mb-5 text-sm">
-              Compare 25+ banks and get the lowest rate in minutes — free.
+              Compare 50+ banks and get the lowest rate in minutes — free.
             </p>
             <Link
               href="/#lead-form"

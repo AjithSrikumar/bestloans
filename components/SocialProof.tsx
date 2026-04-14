@@ -55,7 +55,7 @@ export default function SocialProof() {
             Social Proof
           </p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1E3A8A] mb-4">
-            Trusted by 50,000+ Happy Customers
+            Trusted by 10,000+ Happy Customers
           </h2>
           <div className="flex items-center justify-center gap-2">
             <div className="flex">
@@ -106,9 +106,9 @@ export default function SocialProof() {
         {/* Counter strip */}
         <div className="mt-14 bg-[#1E3A8A] rounded-2xl px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
           {[
-            { value: "50,000+", label: "Loans Processed" },
-            { value: "₹2,000 Cr+", label: "Total Loan Volume" },
-            { value: "25+", label: "Partner Banks" },
+            { value: "10,000+", label: "Loans Processed" },
+            { value: "₹200 Cr+", label: "Total Loan Volume" },
+            { value: "50+", label: "Partner Banks" },
             { value: "4.8★", label: "Average Rating" },
           ].map(({ value, label }) => (
             <div key={label}>

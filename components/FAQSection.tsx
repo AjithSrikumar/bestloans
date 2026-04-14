@@ -10,11 +10,11 @@ const faqs = [
   },
   {
     q: "What is the current home loan interest rate in India?",
-    a: "Home loan interest rates in India currently range from 8.5% to 10.5% p.a. depending on the bank, loan amount, credit score, and property type. BestLoans helps you get the lowest rate available for your profile.",
+    a: "Home loan interest rates in India currently range from 7.10% to 10.5% p.a. depending on the bank, loan amount, credit score, and property type. BestLoans helps you get the lowest rate available for your profile.",
   },
   {
     q: "How long does home loan approval take?",
-    a: "With BestLoans, you can get an in-principle approval within 30 minutes. Full sanction letter takes 3–5 business days, and disbursement happens within 7–10 business days after all documents are submitted.",
+    a: "With BestLoans, you can get an in-principle approval within 48 hours. Full sanction letter takes 3–5 business days, and disbursement happens within 7–10 business days after all documents are submitted.",
   },
   {
     q: "What documents are needed for a home loan?",
@@ -105,13 +105,13 @@ export default function FAQSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="tel:+919999999999"
+              href="tel:+919500109337"
               className="inline-flex items-center justify-center gap-2 bg-[#1E3A8A] text-white font-semibold px-5 py-2.5 rounded-lg text-sm hover:bg-[#1e40af] transition-colors"
             >
               📞 Call Us Now
             </a>
             <a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/919500109337"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold px-5 py-2.5 rounded-lg text-sm hover:bg-[#1fb855] transition-colors"

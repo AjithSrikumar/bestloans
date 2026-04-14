@@ -53,7 +53,7 @@ export default function BlogPage() {
             Ready to Apply for a Home Loan?
           </h2>
           <p className="text-blue-200 mb-5 text-sm">
-            Compare 25+ banks and get the lowest rate in minutes.
+            Compare 50+ banks and get the lowest rate in minutes.
           </p>
           <Link
             href="/#lead-form"

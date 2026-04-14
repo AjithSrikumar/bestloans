@@ -2,17 +2,16 @@ import MultiStepForm from "./MultiStepForm";
 import { Shield, Clock, Star, TrendingDown } from "lucide-react";
 
 const trustBadges = [
-  { icon: Shield, label: "RBI Registered" },
+  { icon: Shield, label: "Most Trusted" },
   { icon: Star, label: "4.8★ Rated" },
   { icon: TrendingDown, label: "Lowest Rates" },
-  { icon: Clock, label: "30-min Approval" },
+  { icon: Clock, label: "48hr Processing" },
 ];
 
 const stats = [
-  { value: "50,000+", label: "Happy Customers" },
-  { value: "25+", label: "Partner Banks" },
-  { value: "₹2,000 Cr+", label: "Loans Disbursed" },
-  { value: "8.5%", label: "Interest from" },
+  { value: "10,000+", label: "Happy Customers" },
+  { value: "50+", label: "Partner Banks" },
+  { value: "₹200 Cr+", label: "Loans Disbursed" },
 ];
 
 export default function HeroSection() {
@@ -44,9 +43,9 @@ export default function HeroSection() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-extrabold text-[#1E3A8A] leading-tight tracking-tight">
-              Get the{" "}
+              Get Home Loan{" "}
               <span className="text-[#22C55E] relative">
-                Best Home Loan
+                Starting 7.10%*
                 <svg
                   className="absolute -bottom-1 left-0 w-full"
                   height="6"
@@ -60,15 +59,13 @@ export default function HeroSection() {
                     strokeLinecap="round"
                   />
                 </svg>
-              </span>{" "}
-              with BestLoans
+              </span>
             </h1>
 
             <p className="text-gray-600 text-lg leading-relaxed max-w-lg">
-              Compare home loans from{" "}
-              <strong className="text-[#1E3A8A]">25+ leading banks</strong>.
-              Get the lowest interest rates, instant eligibility check, and
-              fast approval — all in one place.
+              Get a Dedicated Expert Manager who compares{" "}
+              <strong className="text-[#1E3A8A]">50+ Banks &amp; NBFCs</strong>{" "}
+              for you — saving hours of research and paperwork.
             </p>
 
             {/* Trust badges */}

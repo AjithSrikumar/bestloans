@@ -70,11 +70,11 @@ export default function SalariedLoanPage() {
                 <p className="text-gray-600 text-lg">
                   As a salaried employee, you get preferential rates from all major
                   banks. BestLoans finds you the best deal from{" "}
-                  <strong>25+ banks</strong> — instantly, free.
+                  <strong>50+ banks</strong> — instantly, free.
                 </p>
 
                 <div className="grid grid-cols-2 gap-3">
-                  {["Rates from 8.50% p.a.", "Up to 30-year tenure", "90% LTV financing", "Zero prepayment charges"].map(
+                  {["Rates from 7.10% p.a.", "Up to 30-year tenure", "90% LTV financing", "Zero prepayment charges"].map(
                     (b) => (
                       <div
                         key={b}

@@ -49,11 +49,11 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="tel:+919999999999"
+              href="tel:+919500109337"
               className="flex items-center gap-1 text-sm font-medium text-[#1E3A8A] hover:text-[#22C55E] transition-colors"
             >
               <Phone size={15} />
-              +91 99999 99999
+              +91 95001 09337
             </a>
             <a
               href="#lead-form"

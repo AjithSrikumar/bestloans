@@ -4,7 +4,7 @@ import { CheckCircle2 } from "lucide-react";
 const perks = [
   "100% Free Service",
   "No Credit Score Impact",
-  "Compare 25+ Banks",
+  "Compare 50+ Banks",
   "Expert Guidance",
   "Fast Disbursement",
   "Zero Hidden Fees",
@@ -28,7 +28,7 @@ export default function CTASection() {
               <span className="text-[#22C55E]">One Step Away</span>
             </h2>
             <p className="text-blue-200 text-lg leading-relaxed">
-              Join 50,000+ Indians who got their best home loan deal through
+              Join 10,000+ Indians who got their best home loan deal through
               BestLoans. Our experts negotiate on your behalf — at zero cost.
             </p>
             <ul className="grid grid-cols-2 gap-3">
@@ -41,7 +41,7 @@ export default function CTASection() {
             </ul>
             <div className="pt-2">
               <p className="text-blue-300 text-sm">
-                📞 Call us: <strong className="text-white">+91 99999 99999</strong>
+                📞 Call us: <strong className="text-white">+91 95001 09337</strong>
               </p>
               <p className="text-blue-300 text-sm mt-1">
                 Available 9 AM – 9 PM, Monday to Saturday
