@@ -33,7 +33,7 @@ function BankCard({ name, domain }: { name: string; domain: string }) {
       ) : (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={`https://logo.clearbit.com/${domain}`}
+          src={`https://img.logo.dev/${domain}`}
           alt={name}
           className="max-h-8 max-w-full object-contain"
           onError={() => setFailed(true)}
