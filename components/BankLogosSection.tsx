@@ -13,25 +13,25 @@ const banks = [
   { name: "Sammaan Capital",        domain: "sammaancapital.com" },
   { name: "PNB Housing Finance",    domain: "pnbhousing.com" },
   { name: "Satin Housing Finance",  domain: "satinhousingfinance.com" },
-  { name: "SBI",                    domain: "sbi.co.in", scale: "scale-[0.55]" },
+  { name: "SBI",                    domain: "sbi.co.in" },
   { name: "Equitas Bank",           domain: "equitasbank.com" },
   { name: "Indian Bank",            domain: "indianbank.in" },
   { name: "GIC Housing Finance",    domain: "gichfindia.com" },
   { name: "Bank of Baroda",         domain: "bankofbaroda.in" },
 ];
 
-function BankLogo({ name, domain, scale }: { name: string; domain: string; scale?: string }) {
+function BankLogo({ name, domain }: { name: string; domain: string }) {
   const [failed, setFailed] = useState(false);
 
   return (
     /*
-     * Every logo lives in an identical 128 × 48 px box.
-     * The image is rendered at exactly those dimensions with object-contain,
-     * so wide logos (SBI) and square icons (Jio) all occupy the same area.
+     * The cell is a fixed-height flex slot for alignment only.
+     * The <img> renders at its NATURAL size, capped at max-h/max-w —
+     * never upscaled — so low-res logos stay crisp instead of blurry.
      */
-    <div className="w-32 h-12 flex items-center justify-center p-1.5">
+    <div className="flex items-center justify-center h-10 w-full">
       {failed ? (
-        <span className="text-[10px] font-semibold text-gray-500 text-center leading-tight">
+        <span className="text-[10px] font-semibold text-gray-400 text-center leading-tight px-1">
           {name}
         </span>
       ) : (
@@ -40,7 +40,7 @@ function BankLogo({ name, domain, scale }: { name: string; domain: string; scale
           src={`https://logos.hunter.io/${domain}`}
           alt={name}
           title={name}
-          className={`w-full h-full object-contain${scale ? ` ${scale}` : ""}`}
+          style={{ maxHeight: "36px", maxWidth: "100px", width: "auto", height: "auto" }}
           onError={() => setFailed(true)}
         />
       )}
@@ -51,7 +51,7 @@ function BankLogo({ name, domain, scale }: { name: string; domain: string; scale
 export default function BankLogosSection() {
   return (
     <section id="banks" className="py-12 sm:py-16 bg-white border-y border-gray-100">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-8 sm:mb-10">
           <p className="text-[#22C55E] font-semibold text-sm uppercase tracking-wider mb-2">
@@ -65,10 +65,9 @@ export default function BankLogosSection() {
           </p>
         </div>
 
-        {/* 5 per row on desktop, 3 on mobile — uniform cells */}
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-x-4 gap-y-6 justify-items-center">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-x-6 gap-y-8 items-center justify-items-center">
           {banks.map((bank) => (
-            <BankLogo key={bank.name} name={bank.name} domain={bank.domain} scale={(bank as any).scale} />
+            <BankLogo key={bank.name} name={bank.name} domain={bank.domain} />
           ))}
         </div>
 
