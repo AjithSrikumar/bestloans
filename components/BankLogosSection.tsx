@@ -6,11 +6,11 @@ const banks = [
   { name: "SBI",             domain: "sbi.co.in" },
   { name: "HDFC Bank",       domain: "hdfcbank.com" },
   { name: "ICICI Bank",      domain: "icicibank.com" },
-  { name: "Axis Bank",       domain: "axis.bank.in" },
+  { name: "Axis Bank",       domain: "axisbank.com" },
   { name: "Kotak",           domain: "kotak.com" },
   { name: "PNB",             domain: "pnbindia.in" },
   { name: "Bank of Baroda",  domain: "bankofbaroda.in" },
-  { name: "Canara Bank",     domain: "canarabank.bank.in" },
+  { name: "Canara Bank",     domain: "canarabank.in" },
   { name: "LIC HFL",         domain: "lichousing.com" },
   { name: "Bajaj Finance",   domain: "bajajfinserv.in" },
   { name: "Tata Capital",    domain: "tatacapital.com" },
@@ -24,23 +24,24 @@ const banks = [
 function BankLogo({ name, domain }: { name: string; domain: string }) {
   const [failed, setFailed] = useState(false);
 
-  if (failed) {
-    return (
-      <span className="text-[11px] font-semibold text-gray-400 text-center leading-tight max-w-[72px]">
-        {name}
-      </span>
-    );
-  }
-
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={`https://logos.hunter.io/${domain}`}
-      alt={name}
-      title={name}
-      className="h-7 sm:h-8 w-auto max-w-[90px] sm:max-w-[110px] object-contain opacity-70 hover:opacity-100 transition-opacity duration-200"
-      onError={() => setFailed(true)}
-    />
+    /* Fixed-size cell — every logo lives in the same 120×44 px box */
+    <div className="flex items-center justify-center w-[120px] h-[44px]">
+      {failed ? (
+        <span className="text-[10px] font-semibold text-gray-400 text-center leading-tight px-1">
+          {name}
+        </span>
+      ) : (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={`https://logos.hunter.io/${domain}`}
+          alt={name}
+          title={name}
+          className="max-h-[32px] max-w-[100px] w-auto h-auto object-contain"
+          onError={() => setFailed(true)}
+        />
+      )}
+    </div>
   );
 }
 
@@ -61,8 +62,8 @@ export default function BankLogosSection() {
           </p>
         </div>
 
-        {/* Logo cloud — no boxes, just logos */}
-        <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-5 sm:gap-x-10 sm:gap-y-7">
+        {/* Centered logo cloud — wraps into equal rows on all screen sizes */}
+        <div className="flex flex-wrap justify-center gap-x-2 gap-y-4 sm:gap-x-4 sm:gap-y-6">
           {banks.map((bank) => (
             <BankLogo key={bank.name} name={bank.name} domain={bank.domain} />
           ))}
