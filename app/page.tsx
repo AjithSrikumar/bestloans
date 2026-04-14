@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import BankLogosSection from "@/components/BankLogosSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import ProcessSection from "@/components/ProcessSection";
 import SocialProof from "@/components/SocialProof";
@@ -16,6 +17,7 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <HeroSection />
+        <BankLogosSection />
         <BenefitsSection />
         <ProcessSection />
         <SocialProof />
