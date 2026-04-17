@@ -5,7 +5,6 @@ import { toast } from "sonner";
 import {
   Loader2,
   CheckCircle2,
-  MessageCircle,
   ChevronRight,
   ChevronLeft,
   Home,
@@ -13,6 +12,7 @@ import {
   User,
 } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 interface FormData {
   loan_amount: string;
@@ -232,7 +232,7 @@ export default function MultiStepForm({ compact = false }: Props) {
           onClick={openWhatsApp}
           className="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1fb855] text-white font-semibold py-3.5 rounded-xl transition-all animate-pulse-green"
         >
-          <MessageCircle size={20} />
+          <WhatsAppIcon size={22} />
           Continue on WhatsApp
         </button>
         <button

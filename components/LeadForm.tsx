@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { toast } from "sonner";
-import { Loader2, CheckCircle2, MessageCircle } from "lucide-react";
+import { Loader2, CheckCircle2 } from "lucide-react";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 interface FormData {
   name: string;
@@ -162,7 +163,7 @@ export default function LeadForm({ compact = false }: Props) {
           onClick={openWhatsApp}
           className="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1fb855] text-white font-semibold py-3.5 rounded-xl transition-all animate-pulse-green"
         >
-          <MessageCircle size={20} />
+          <WhatsAppIcon size={22} />
           Continue on WhatsApp
         </button>
         <button

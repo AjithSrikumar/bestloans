@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { MessageCircle, X } from "lucide-react";
+import { X } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export default function FloatingWhatsApp() {
   const [tooltipOpen, setTooltipOpen] = useState(false);
@@ -46,7 +47,7 @@ export default function FloatingWhatsApp() {
         className="w-14 h-14 bg-[#25D366] hover:bg-[#1fb855] text-white rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-110 active:scale-95 animate-pulse-green"
         aria-label="Chat on WhatsApp"
       >
-        <MessageCircle size={26} />
+        <WhatsAppIcon size={30} />
       </button>
     </div>
   );

@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { X, MessageCircle, TrendingDown } from "lucide-react";
+import { X, TrendingDown } from "lucide-react";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { trackEvent } from "@/lib/analytics";
 
 export default function ExitIntentModal() {
@@ -99,7 +100,7 @@ export default function ExitIntentModal() {
           onClick={handleWhatsApp}
           className="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1fb855] text-white font-bold py-4 rounded-xl transition-all text-base"
         >
-          <MessageCircle size={20} />
+          <WhatsAppIcon size={22} />
           Get Best Rates on WhatsApp
         </button>
 
