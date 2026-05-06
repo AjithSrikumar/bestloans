@@ -108,29 +108,30 @@ export default function LeadForm({ compact = false }: Props) {
     if (!validate()) return;
 
     setLoading(true);
-    try {
-      const res = await fetch("/api/leads", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+
+    // Fire-and-forget — don't block on the API response
+    fetch("/api/leads", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    }).catch(() => {});
+
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "lead_form_submit", {
+        event_category: "Lead",
+        event_label: form.city,
       });
-
-      if (!res.ok) throw new Error("Submission failed");
-
-      // Analytics hook
-      if (typeof window !== "undefined" && (window as any).gtag) {
-        (window as any).gtag("event", "lead_form_submit", {
-          event_category: "Lead",
-          event_label: form.city,
-        });
-      }
-
-      setSubmitted(true);
-    } catch {
-      toast.error("Something went wrong. Please try again or call us directly.");
-    } finally {
-      setLoading(false);
     }
+
+    const msg = generateWhatsAppMessage(form);
+    window.open(
+      `https://wa.me/919500109337?text=${encodeURIComponent(msg)}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+
+    setLoading(false);
+    setSubmitted(true);
   }
 
   function openWhatsApp() {
@@ -150,13 +151,13 @@ export default function LeadForm({ compact = false }: Props) {
         </div>
         <div>
           <h3 className="text-xl font-bold text-[#1E3A8A] mb-1">
-            ✅ Application Received!
+            Opening WhatsApp...
           </h3>
           <p className="text-gray-600 text-sm">
-            Our loan expert will call you within 30 minutes.
+            Your details are being sent to our loan expert on WhatsApp.
           </p>
           <p className="text-gray-500 text-sm mt-1">
-            For faster processing, continue on WhatsApp.
+            If WhatsApp didn&apos;t open automatically, tap the button below.
           </p>
         </div>
         <button
@@ -164,7 +165,7 @@ export default function LeadForm({ compact = false }: Props) {
           className="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1fb855] text-white font-semibold py-3.5 rounded-xl transition-all animate-pulse-green"
         >
           <WhatsAppIcon size={22} />
-          Continue on WhatsApp
+          Open WhatsApp
         </button>
         <button
           onClick={() => setSubmitted(false)}

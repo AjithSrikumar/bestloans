@@ -173,27 +173,30 @@ export default function MultiStepForm({ compact = false }: Props) {
     setLoading(true);
     const { score, intent_level } = calculateScore(form.loan_amount, form.income);
 
-    try {
-      const res = await fetch("/api/leads", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, score, intent_level, source }),
-      });
-      if (!res.ok) throw new Error();
+    // Fire-and-forget — don't block on the API response
+    fetch("/api/leads", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...form, score, intent_level, source }),
+    }).catch(() => {});
 
-      trackEvent("form_submitted", {
-        city: form.city,
-        loan_amount: form.loan_amount,
-        intent_level,
-        score,
-      });
+    trackEvent("form_submitted", {
+      city: form.city,
+      loan_amount: form.loan_amount,
+      intent_level,
+      score,
+    });
+    trackEvent("whatsapp_clicked", { source: "form_submit" });
 
-      setSubmitted(true);
-    } catch {
-      toast.error("Something went wrong. Please try again or call us directly.");
-    } finally {
-      setLoading(false);
-    }
+    const msg = buildWhatsAppMessage(form);
+    window.open(
+      `https://wa.me/919500109337?text=${encodeURIComponent(msg)}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+
+    setLoading(false);
+    setSubmitted(true);
   }
 
   function openWhatsApp() {
@@ -217,15 +220,13 @@ export default function MultiStepForm({ compact = false }: Props) {
         </div>
         <div>
           <h3 className="text-xl font-bold text-[#1E3A8A] mb-1">
-            ✅ Application Received!
+            Opening WhatsApp...
           </h3>
           <p className="text-gray-600 text-sm">
-            Our loan expert will call{" "}
-            <strong className="text-[#1E3A8A]">+91 {form.phone}</strong> within
-            30 minutes.
+            Your details are being sent to our loan expert on WhatsApp.
           </p>
           <p className="text-gray-500 text-sm mt-1">
-            For faster processing, continue on WhatsApp.
+            If WhatsApp didn&apos;t open automatically, tap the button below.
           </p>
         </div>
         <button
@@ -233,7 +234,7 @@ export default function MultiStepForm({ compact = false }: Props) {
           className="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1fb855] text-white font-semibold py-3.5 rounded-xl transition-all animate-pulse-green"
         >
           <WhatsAppIcon size={22} />
-          Continue on WhatsApp
+          Open WhatsApp
         </button>
         <button
           onClick={() => { setSubmitted(false); setStep(0); setForm(initial); }}
