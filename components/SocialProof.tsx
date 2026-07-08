@@ -2,8 +2,8 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Priya Sharma",
-    city: "Mumbai",
+    name: "Priya",
+    city: "Chennai",
     rating: 5,
     text: "BestLoans saved me ₹3.2 lakhs in interest by comparing banks! The process was seamless — applied in 10 minutes and got approval in a day.",
     loan: "₹75 Lakhs Home Loan",
@@ -18,8 +18,8 @@ const testimonials = [
     initial: "R",
   },
   {
-    name: "Anita Mehta",
-    city: "Delhi",
+    name: "Anita",
+    city: "Coimbatore",
     rating: 5,
     text: "The WhatsApp support was incredible. Got my doubts cleared at 11 PM! Loan was disbursed within 7 days of application.",
     loan: "₹1.2 Crore Home Loan",
@@ -55,7 +55,7 @@ export default function SocialProof() {
             Social Proof
           </p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1E3A8A] mb-4">
-            Trusted by 10,000+ Happy Customers
+            Trusted by 100+ Happy Customers
           </h2>
           <div className="flex items-center justify-center gap-2">
             <div className="flex">
@@ -69,7 +69,7 @@ export default function SocialProof() {
             </div>
             <span className="text-gray-700 font-semibold">4.8/5</span>
             <span className="text-gray-400 text-sm">
-              based on 12,000+ reviews
+              based on 50+ reviews
             </span>
           </div>
         </div>
