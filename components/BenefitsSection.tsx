@@ -64,7 +64,7 @@ export default function BenefitsSection() {
             The Smarter Way to Get a Home Loan
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto text-base">
-            We&apos;ve helped 10,000+ families get the home of their dreams.
+            We&apos;ve helped 100+ families get the home of their dreams.
             Here&apos;s what makes us different.
           </p>
         </div>
