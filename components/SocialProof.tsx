@@ -106,8 +106,8 @@ export default function SocialProof() {
         {/* Counter strip */}
         <div className="mt-14 bg-[#1E3A8A] rounded-2xl px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
           {[
-            { value: "10,000+", label: "Loans Processed" },
-            { value: "₹200 Cr+", label: "Total Loan Volume" },
+            { value: "100+", label: "Loans Processed" },
+            { value: "₹25 Cr+", label: "Total Loan Volume" },
             { value: "150+", label: "Partner Banks" },
             { value: "4.8★", label: "Average Rating" },
           ].map(({ value, label }) => (
