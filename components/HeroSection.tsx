@@ -9,9 +9,9 @@ const trustBadges = [
 ];
 
 const stats = [
-  { value: "10,000+", label: "Happy Customers" },
+  { value: "100+", label: "Happy Customers" },
   { value: "150+", label: "Partner Banks" },
-  { value: "₹200 Cr+", label: "Loans Disbursed" },
+  { value: "₹25 Cr+", label: "Loans Disbursed" },
 ];
 
 export default function HeroSection() {
